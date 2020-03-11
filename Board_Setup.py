@@ -28,6 +28,8 @@ class Board():
 
 
 def check_x(rows,columns):
+
+	"""Board condition setter"""
 	board = Board(rows,columns)
 	while 0 in board.board:
 		try:
