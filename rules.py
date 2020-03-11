@@ -36,3 +36,57 @@ class diaglysis:
 
         else:
             return False
+
+    def down_left(self):
+        # Execution function for down and right check
+        dl = lambda d, x, y:tuple([x-d, y+d])
+
+        # Trying is necessary because we will often index outside of allowable limits
+        try:
+            value_point = [self.array[dl(n, self.position[0], self.position[1])] for n in range(self.win_c)]
+
+        except:
+            return False
+
+        # Condition for win is calculated by getting the player's value multipled by the number of spaces he/she has in this row
+        if (self.win_c * self.play_v) == sum(value_point):
+            return True
+
+        else:
+            return False
+
+    def up_left(self):
+        # Execution function for down and right check
+        ul = lambda d, x, y:tuple([x-d, y-d])
+
+        # Trying is necessary because we will often index outside of allowable limits
+        try:
+            value_point = [self.array[ul(n, self.position[0], self.position[1])] for n in range(self.win_c)]
+
+        except:
+            return False
+
+        # Condition for win is calculated by getting the player's value multipled by the number of spaces he/she has in this row
+        if (self.win_c * self.play_v) == sum(value_point):
+            return True
+
+        else:
+            return False
+
+    def up_right(self):
+        # Execution function for down and right check
+        ur = lambda d, x, y:tuple([x+d, y-d])
+
+        # Trying is necessary because we will often index outside of allowable limits
+        try:
+            value_point = [self.array[ur(n, self.position[0], self.position[1])] for n in range(self.win_c)]
+
+        except:
+            return False
+
+        # Condition for win is calculated by getting the player's value multipled by the number of spaces he/she has in this row
+        if (self.win_c * self.play_v) == sum(value_point):
+            return True
+
+        else:
+            return False
