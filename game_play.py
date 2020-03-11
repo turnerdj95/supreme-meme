@@ -9,6 +9,16 @@ import Board_Setup
 import numpy as np
 
 class ConnectFour:
-    def __init__(self):
-        self.board = Board_Setup.Board
+    def __init__(self, rows, columns):
+
+        # Static conditional data
+        self.rows = rows
+        self.columns = columns
+
+        # Dyanmic data
+
+        # Flexible gameplay objects
+        self.board = Board_Setup.Board(self.rows, self.columns)
+
+
 

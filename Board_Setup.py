@@ -1,6 +1,6 @@
 import numpy as np
 
-class Board():
+class Board:
 	def __init__(self,rows,columns):
 		self.rows=int(rows)
 		self.columns=int(columns)
