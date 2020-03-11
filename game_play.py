@@ -17,6 +17,8 @@ class ConnectFour:
         self.columns = columns
 
         # Dyanmic data
+
+        # Holds last player coordinates for use in rule check
         self.player_1_last_move = None
         self.player_2_last_move = None
 
