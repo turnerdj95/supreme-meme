@@ -9,6 +9,7 @@ import Board_Setup
 import numpy as np
 
 class ConnectFour:
+    """Scehma for game data storage and master organization"""
     def __init__(self, rows, columns):
 
         # Static conditional data
