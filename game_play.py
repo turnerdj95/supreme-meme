@@ -17,6 +17,9 @@ class ConnectFour:
         self.columns = columns
 
         # Dyanmic data
+        self.player_1_last_move = None
+        self.player_2_last_move = None
+
 
         # Flexible gameplay objects
         self.board = Board_Setup.Board(self.rows, self.columns)
