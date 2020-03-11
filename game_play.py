@@ -8,6 +8,11 @@ Purpose: Array-based connect four gameeplay without GUI
 import Board_Setup
 import numpy as np
 
+welcome_message = "Welcome to ConnectFour for your terminal window!" +\
+                  "\n"  +\
+                  "WARNING: This version of the game will clear your command prompt" +\
+                  "Before proceeding, please be sure to copy any text from your prompt. Cheers!"
+
 class ConnectFour:
     """Scehma for game data storage and master organization"""
     def __init__(self, rows, columns):
@@ -27,4 +32,9 @@ class ConnectFour:
         self.board = Board_Setup.Board(self.rows, self.columns)
 
 
+def main():
+    print(welcome_message)
+    y_ = input("Enter the number of columns for your board:")
+    x_ = input("Enter the number of rows for your board:")
+    
 
