@@ -20,13 +20,13 @@ class diaglysis:
         self.position = last_play
 
     def down_right(self):
-        # Execution function
+        # Execution function for down and right check
         dr = lambda d, x, y:tuple([x+d, y+d])
 
         # Trying is necessary because we will often index outside of allowable limits
         try:
             value_point = [self.array[dr(n, self.position[0], self.position[1])] for n in range(self.win_c)]
-        
+
         except:
             return False
 
