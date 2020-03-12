@@ -6,6 +6,7 @@ Purpose: Array-based connect four gameeplay without GUI
 # Impport statments
 
 import Board_Setup
+import rules
 import numpy as np
 
 welcome_message = "Welcome to ConnectFour for your terminal window!" +\
@@ -36,5 +37,5 @@ def main():
     print(welcome_message)
     y_ = input("Enter the number of columns for your board:")
     x_ = input("Enter the number of rows for your board:")
-    
+
 

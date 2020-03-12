@@ -16,7 +16,7 @@ class diaglysis:
         self.play_v = player_value
         self.win_c = num_check_win
 
-        # Interpreted aas a two item list indexable iterable
+        # Interpreted as a two item list indexable iterable
         self.position = last_play
 
     def down_right(self):
@@ -90,3 +90,54 @@ class diaglysis:
 
         else:
             return False
+
+
+    def just_right(self):
+        jr = lambda d, x, y: tuple([x, y+d])
+        try:
+            value_point = [self.array[jr(n, self.position[0], self.position[1])] for n in range(self.win_c)]
+
+        except:
+            return False
+
+        # Condition for win is calculated by getting the player's value multipled by the number of spaces he/she has in this row
+        if (self.win_c * self.play_v) == sum(value_point):
+            return True
+
+        else:
+            return False
+
+    def just_left(self):
+        jl = lambda d, x, y: tuple([x, y-d])
+        try:
+            value_point = [self.array[jl(n, self.position[0], self.position[1])] for n in range(self.win_c)]
+
+        except:
+            return False
+
+        # Condition for win is calculated by getting the player's value multipled by the number of spaces he/she has in this row
+        if (self.win_c * self.play_v) == sum(value_point):
+            return True
+
+        else:
+            return False
+
+    def just_down(self):
+        jd = lambda d, x, y: tuple([x+d, y])
+        try:
+            value_point = [self.array[jd(n, self.position[0], self.position[1])] for n in range(self.win_c)]
+
+        except:
+            return False
+
+        # Condition for win is calculated by getting the player's value multipled by the number of spaces he/she has in this row
+        if (self.win_c * self.play_v) == sum(value_point):
+            return True
+
+        else:
+            return False
+
+    # We don't need a just_up function because it won't ever flag true
+
+
+
