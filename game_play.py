@@ -51,12 +51,10 @@ def main():
     # Instantiate game object
     game_board = ConnectFour(x_, y_)
 
-
-
     # Game requires win condition before the maximum number of spaces are filled
     for t in range((y_*x_)+1):
-        print("Turn: " + str(t))
-        print("Current Turn: ")
+        clear()
+        print("Current Turn: " + str(t+1))
 
         # Player 1 moves first
         if t%2 == 0:
@@ -94,14 +92,16 @@ def main():
         wins.append(temp_checker.just_right())
 
         if any(wins):
+            clear()
             game_win = True
+            print(game_board.act_board.board)
+
+            print("Congratulations player " + str(player) + "! You win!!!")
             break
 
-
-
-
-
-
+    if not game_win:
+        print(game_board.act_board.board)
+        print("DRAW")
 
 
 if __name__ == "__main__":
