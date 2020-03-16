@@ -5,6 +5,7 @@ class Board:
         self.rows=int(rows)
         self.columns=int(columns)
         self.board = np.zeros((self.rows,self.columns),dtype='int8')
+        self.last_play = None
         self.p1 = 1
         self.p2 = -1
 
@@ -16,6 +17,7 @@ class Board:
         while col[counter] != 0:
             counter -= 1
         self.board[counter,col_select] = self.p1
+        self.last_play = [counter,col_select]
 
     def player_two(self,col_select):
         while col_select > self.columns-1:
@@ -25,6 +27,7 @@ class Board:
         while col[counter] != 0:
             counter -= 1
         self.board[counter,col_select] = self.p2
+        self.last_play = [counter, col_select]
 
 
 def check_x(rows,columns):
